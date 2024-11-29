@@ -4,6 +4,7 @@ import Home from './component/Home'
 import About from './component/About'
 import Navbar from './component/Navbar'
 import OrderConfirmed from './component/OrderConfirmed'
+import NoMathch from './component/NoMathch'
 
 function App() {
   const router=createBrowserRouter([
@@ -18,6 +19,10 @@ function App() {
     {
       path:'order-confirmed',
       element:<OrderConfirmed/>
+    },
+    {
+      path:'*',
+      element:<NoMathch/>
     }
   ])
   return (
