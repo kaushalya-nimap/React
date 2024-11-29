@@ -1,7 +1,7 @@
-import React from 'react'
+import React,{Suspense} from 'react'
 import {createBrowserRouter,RouterProvider} from 'react-router-dom'
 import Home from './component/Home'
-import About from './component/About'
+//import About from './component/About'
 import Navbar from './component/Navbar'
 import OrderConfirmed from './component/OrderConfirmed'
 import NoMathch from './component/NoMathch'
@@ -10,6 +10,7 @@ import Featured from './component/Featured'
 import New from './component/New'
 import User from './component/DynamicRoute/User'
 import UserDetails from './component/DynamicRoute/UserDetails'
+const LazyAbout=React.lazy(()=>import ('./component/About') )
 
 function App() {
   const router=createBrowserRouter([
@@ -19,7 +20,7 @@ function App() {
     },
     {
       path:'/about',
-      element:<About/>
+      element:<LazyAbout/>
     },
     {
       path:'order-confirmed',
@@ -55,10 +56,13 @@ function App() {
     }
     
   ])
+  //lazy component not required at initial load can be separate in bundle and download only when user navigates to that page this reduces main pages load time by avoiding the load of an heavy page
   return (
     <div>
       <Navbar/>
-      <RouterProvider router={router}/>     
+      <Suspense fallback='Loading...'>
+      <RouterProvider router={router}/>  
+      </Suspense>   
     </div>
   )
 }
