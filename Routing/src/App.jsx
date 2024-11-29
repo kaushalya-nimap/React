@@ -8,6 +8,8 @@ import NoMathch from './component/NoMathch'
 import Products from './component/Products'
 import Featured from './component/Featured'
 import New from './component/New'
+import User from './component/DynamicRoute/User'
+import UserDetails from './component/DynamicRoute/UserDetails'
 
 function App() {
   const router=createBrowserRouter([
@@ -40,7 +42,18 @@ function App() {
           element:<New/>
         },
       ]      
+    },
+    {
+      path:'user',
+      element:<User/>,
+      children:[
+        {
+          path:':userid',//dynamic routes 
+          element:<UserDetails/>
+        }
+      ]
     }
+    
   ])
   return (
     <div>
