@@ -5,6 +5,9 @@ import About from './component/About'
 import Navbar from './component/Navbar'
 import OrderConfirmed from './component/OrderConfirmed'
 import NoMathch from './component/NoMathch'
+import Products from './component/Products'
+import Featured from './component/Featured'
+import New from './component/New'
 
 function App() {
   const router=createBrowserRouter([
@@ -23,6 +26,20 @@ function App() {
     {
       path:'*',
       element:<NoMathch/>
+    },
+    {
+      path:'products',
+      element:<Products/>,
+      children:[
+        {
+          path:'featured',
+          element:<Featured/>,
+        },
+        {
+          path:'new',
+          element:<New/>
+        },
+      ]      
     }
   ])
   return (
