@@ -1,11 +1,12 @@
 import React from 'react'
 import Hero from './Hero'
 import ErrorBoundary from './ErrorBoundary'
+import UseMemo from './UseMemo'
 
 function App() {
   return (
   <div>
-     <ErrorBoundary>
+     {/* <ErrorBoundary>
         <Hero heroName="Batman" />
       </ErrorBoundary>
       <ErrorBoundary>
@@ -13,7 +14,8 @@ function App() {
       </ErrorBoundary>
       <ErrorBoundary>
         <Hero heroName="Joker" />
-      </ErrorBoundary>
+      </ErrorBoundary> */}
+      <UseMemo/>
   </div>    
   )
 }
