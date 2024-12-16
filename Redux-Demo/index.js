@@ -2,6 +2,12 @@ const redux=require('redux')
 const createStore=redux.createStore
 const bindActionCreators=redux.bindActionCreators;
 const combineReducers=redux.combineReducers//to combine multiple reducer 
+
+
+const applyMiddleware=redux.applyMiddleware
+const reduxLogger=require('redux-logger')
+const logger=reduxLogger.createLogger()
+
 //console.log('From index.js')
 const CAKE_ORDERED='CAKE_ORDERED'
 const CAKE_RESTOCKED='CAKE_RESTOCKED'
@@ -92,11 +98,11 @@ const rootReducer=combineReducers({
     cake:cakeReducer,
     iceCream:iceCreamReducer,
 })
-const store=createStore(rootReducer)
+const store=createStore(rootReducer,applyMiddleware(logger))
 //2
 console.log('Initial state',store.getState())
 //4
-const unsubscribe=store.subscribe(()=>console.log("Updated state",store.getState()))
+//const unsubscribe=store.subscribe(()=>console.log("Updated state",store.getState()))
 //3
 // store.dispatch(orderCake()) //In dispatch we invoke the actioncreator that return the action
 // store.dispatch(orderCake())
@@ -113,4 +119,4 @@ actions.orderIceCream()
 actions.restockIceCream(2)
 //this above bindActionCReators function turn object whose value are action creators into object with same key but every ac wrapped into dispatch call so they are invoked directly
 //5
-unsubscribe()
+//unsubscribe()
