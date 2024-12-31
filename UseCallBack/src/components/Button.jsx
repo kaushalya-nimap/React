@@ -10,3 +10,7 @@ function Button({handleClick,children}) {
 }
 
 export default React.memo(Button) 
+// useMemo	useCallback
+// Memoizes return values to optimize computations.	Memoizes functions to prevent recreation.
+// Useful for expensive operations like calculations.	Useful for passing stable function references.
+// Returns a computed value.	Returns a memoized function reference.

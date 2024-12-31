@@ -87,7 +87,7 @@ const iceCreamReducer=(state=initialIceCreamState,action)=>{
 
 //Step 4:Redux Store:-for entire app only 1 store,following responsibilities
 //1.Holds app state
-//Allows access to state getState()
+//Allows access to state via getState()
 //Allows state to be updated dispatch(action)
 //Registers listeners subscribe(listener)
 //Handles unregistering of listeners via the function returned by subscribe(listener)

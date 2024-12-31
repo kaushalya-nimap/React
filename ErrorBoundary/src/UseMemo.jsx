@@ -1,4 +1,5 @@
 import React from 'react'
+import { useCallback } from 'react'
 import { useMemo } from 'react'
 import { useState } from 'react'
 
@@ -6,11 +7,11 @@ function UseMemo() {
     const[count,setCount]=useState(0)
     const[item,setItem]=useState(10)
     const multiMemo=useMemo(()=>{
-        console.warn('multi')
+        console.log('multi')
         return count*5
     },[count])
-    // function multiCount(){
-    //     console.warn('multi')
+    // function multiCount(){ //needs to be updated only when the count value updates
+    //     console.log('multi')
     //     return count*5
     // }
   return (

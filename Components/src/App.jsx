@@ -2,7 +2,7 @@ import React from 'react'
 import ComponentA from './Component/ComponentA'
 
 function App() {
-  return (
+  returnb (
     <div>
       App
     <ComponentA/>
