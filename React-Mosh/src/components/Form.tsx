@@ -21,6 +21,7 @@ const Form = () => {
           type="text"
           className="form-control"
         />
+        {errors.name?.type==='required'&&<p>The field is required</p>}
       </div>
       <div className="mb-3">
         <label htmlFor="" className="form-label">

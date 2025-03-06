@@ -1,9 +1,9 @@
 import React from 'react'
-import Login from './components/Login'
+import Login from './pages/Login'
 import Navbar from './components/Navbar'
-import Register from './components/Register'
-import Dashboard from './components/Dashboard'
-import ProtectedRoute from './components/ProtectedRoute'
+import Register from './pages/Register'
+import Dashboard from './pages/Dashboard'
+import ProtectedRoute from './ProtectedRoute'
 import {createBrowserRouter,RouterProvider} from 'react-router-dom'
 
 function App() {
